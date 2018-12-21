@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_job_query"
+            android:checked="true"
+            android:icon="@drawable/ic_query_black_24dp"
+            android:title="@string/menu_query"/>
+        <item
+        android:id="@+id/navigation_task"
+        android:icon="@drawable/ic_task_black_24dp"
+        android:title="@string/menu_task"/>
+        <item
+            android:id="@+id/navigation_setting"
+            android:icon="@drawable/ic_nav_my_account"
+            android:title="@string/menu_my_account"/>
+    </group>
+</menu>

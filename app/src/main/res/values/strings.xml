@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">腾讯职位查询系统-客户端</string>
+
+    <!-- 登录/注册界面相关 -->
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+
+    <string name="prompt_username">用户名(大小写英文/数字)</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">请输入密码</string>
+    <string name="prompt_password_repeat">请再次输入密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_commit">提交</string>
+    <string name="action_sign_in_short">登录/注册</string>
+    <string name="error_invalid_username">用户名不合法(不少于2位的英数字)</string>
+    <string name="error_invalid_email">邮箱格式不合法</string>
+    <string name="error_invalid_password">密码长度太短</string>
+    <string name="error_incorrect_password">密码不合法</string>
+    <string name="error_incorrect_repeat">两次输入的密码不一致</string>
+    <string name="error_field_required">该栏目是必填项</string>
+
+    <string name="title_activity_main">职位查询</string>
+    <string name="title_activity_login">登录</string>
+
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
+
+    <string name="nav_header_username">用户</string>
+    <!-- 菜单 -->
+    <string name="menu_query">查询</string>
+    <string name="menu_task">任务</string>
+    <string name="menu_my_account">个人中心</string>
+
+
+
+    <!-- 任务 -->
+    <string name="add_task_select_query">选择一个查询来创建任务</string>
+    <string name="add_task">新建任务</string>
+
+    <!-- 个人中心 -->
+    <string name="menu_job_history">阅览记录</string>
+    <string name="menu_my_favorite">我的收藏</string>
+
+    <!-- 查询子菜单 -->
+    <string name="query">查询</string>
+    <string name="new_job_query">新建查询</string>
+    <string name="new_job_query_limit_reached">"同时最多只能创建3个查询！"</string>
+
+
+    <!-- 职位各属性名称-->
+    <string name="job_title">标题</string>
+    <string name="job_location">地点</string>
+    <string name="job_type">类别</string>
+    <string name="job_hiring_number">招聘人数</string>
+    <string name="job_date">发布日期</string>
+    <string name="job_duties">工作职责</string>
+    <string name="job_requirements">工作要求</string>
+
+    <!-- 职位各属性简称-->
+    <string name="job_sht_title">标题</string>
+    <string name="job_sht_location">地点</string>
+    <string name="job_sht_type">类别</string>
+    <string name="job_sht_hiring_number">人数</string>
+    <string name="job_sht_date">日期</string>
+    <string name="job_sht_duties">职责</string>
+    <string name="job_sht_requirements">要求</string>
+
+    <!-- 职位，这里只是个展示模板-->
+    <string name="job_title_content">25926-自然语言处理算法工程师（深圳）</string>
+    <string name="job_location_content">深圳</string>
+    <string name="job_type_content">技术类</string>
+    <string name="job_hiring_number_content">1人</string>
+    <string name="job_date_content">2018-01-01</string>
+    <string name="job_duties_content">负责腾讯游戏或社区平台内容相关的风险监控，发现风险及风控策略实施；\n负责语义理解、知识图谱构建，分类/聚类，情感分析和质量识别工作。</string>
+    <string name="job_requirements_content">计算机或相关专业本科及以上学历，1年以上相关工作经验；\n责任感强、有较强的逻辑思维能力、沟通能力和抗压能力；\n掌握数据分析方法,深入理解常见机器学习算法、有深度学习经验者优先；\n有linux使用经验,能够熟练使用python进行海量数据分析；\n熟悉分词、词性标注、命名实体识别、文本分类、聚类等常用NLP算法，Deep Learning for NLP研究背景者优先。</string>
+    <string name="job_query_expression_content">查询表达式：\nr{c++&amp;&amp;3年}&amp;&amp;t{高级工程师}&amp;&amp;l{深圳}</string>
+    <string name="create_task">创建任务</string>
+
+    <!-- 任务，这里只是个展示模板-->
+    <string name="task_title">未命名任务1</string>
+    <string name="task_expression">r{java&amp;&amp;c++}</string>
+    <string name="task_expire_time">截止时间：2018/7/15 21:22</string>
+    <string name="task_new_task_count">5个新任务</string>
+
+    <!-- 查询，这里只是个展示模板-->
+    <string name="query_title">查询1</string>
+    <string name="query_expression">表达式：r{java&amp;&amp;c++}&amp;&amp;r{java&amp;&amp;c++}&amp;&amp;r{java&amp;&amp;c++}&amp;&amp;r{java&amp;&amp;c++}</string>
+    <string name="query_result_count">结果个数：5</string>
+
+    <!--个人中心-->
+    <string name="my_account_favorites">我的收藏</string>
+    <string name="my_account_history">阅览记录</string>
+
+    <string name="my_account_settings_enable_notification">启用通知</string>
+    <string name="my_account_settings_enable_notification_foreground">使用前台服务</string>
+
+    <string name="my_account_about">关于</string>
+    <string name="my_account_logoff">注销</string>
+
+
+    <!-- 其他-->
+    <string name="load_more">加载更多</string>
+    <string name="clear_history">清空历史记录</string>
+
+    <string name="filter">过滤器</string>
+    <string name="filter_reset">重置</string>
+
+    <string name="topic">类别</string>
+
+    <string name="cache_mode_info_content">注意：当前模式为快照模式\n显示的查询结果为上次本地的结果，但因为和服务器数据不同步\n因此只能无法进行新的查询，并且无法加载已有查询结果的更多数据\n如果解除快照模式，则会删除本地数据，并从服务器同步最新的查询结果记录</string>
+
+    <string name="simple_input_hint">请输入</string>
+
+    <string name="delete">删除</string>
+
+    <!-- 表达式向导-->
+    <string name="exp_preview">表达式预览：</string>
+    <string name="exp_preview_hint">目前没有表达式</string>
+    <string name="exp_wizard_field">标题满足：</string>
+    <string name="exp_wizard_exp_hint">目前没有条件</string>
+    <string name="exp_add_condition">添加条件：</string>
+    <string name="exp_contains">包含</string>
+    <string name="exp_not_contains">不包含</string>
+    <string name="exp_and_contains">且包含</string>
+    <string name="exp_or_contains">或包含</string>
+    <string name="exp_and_not_contains">且不包含</string>
+    <string name="exp_or_not_contains">或不包含</string>
+    <string name="exp_undo">撤销</string>
+    <string name="exp_redo">重做</string>
+    <string name="exp_reset">重置</string>
+</resources>

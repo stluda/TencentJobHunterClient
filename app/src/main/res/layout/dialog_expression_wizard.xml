@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/pager_wizard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_expression_preview_msg"/>
+
+    <TextView
+        android:id="@+id/tv_expression_preview_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exp_preview"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_expression_preview"/>
+
+    <TextView
+        android:id="@+id/tv_expression_preview"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="@string/exp_preview_hint"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+        android:background="@drawable/border_grey"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_cancel"
+        android:text="取消"
+        android:gravity="center"
+        android:enabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_prev"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_prev"
+        android:text="上一步"
+        android:enabled="false"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/btn_cancel"
+        app:layout_constraintEnd_toStartOf="@id/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_next"
+        android:text="下一步"
+        android:enabled="false"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/btn_prev"
+        app:layout_constraintEnd_toStartOf="@id/btn_confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_confirm"
+        android:text="确定"
+        android:enabled="false"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/btn_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</android.support.constraint.ConstraintLayout>

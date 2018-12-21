@@ -1,0 +1,137 @@
+syntax = "proto3";
+option optimize_for = LITE_RUNTIME;
+
+package TencentJobHunterMessage;
+
+enum Type {
+	REGISTER = 0;//注册
+	LOGIN = 1;//登录
+	ADD_JOB_QUERY = 2;//添加查询
+	DELETE_JOB_QUERY = 3;//删除查询结果
+	GET_JOB_DETAIL = 4;//获取职位详情
+	ADD_TASK = 5;
+	GET_TASK_LIST = 6;
+	GET_TASK_QUERY_RESULT_CHANGED_TIME = 7;
+	GET_TASK_QUERY_RESULT = 8;
+	DELETE_TASK = 9;
+}
+
+//返回职位的数据内容
+enum JobDataType {
+	EXCLUDE_CONTENT = 0; //返回除职位职责/职位要求以外的内容（默认）
+	ID_ONLY = 1; //只返回ID
+	ID_TITLE = 2; //只返回ID和Title
+	FULL_DETAIL = 3; //完整信息
+}
+
+message Job {
+	int32 id = 1;
+	string title = 2;
+	int32 type = 3;
+	int32 location = 4;
+	int32 hiring_number = 5;
+	string date = 6;
+	string duties = 7;
+	string requirements = 8;
+}
+
+message Task {
+	int32 id = 1; //task的id
+	string taskname = 2; //task的名称，可以自己定义
+	string username = 3; //task对应的用户
+	string query_expression = 4; //查询表达式
+	string expire_time = 5;//任务的截止日期（超过截止日期，任务将失效）
+	int32 query_result_count = 6;//到目前为止查询结果的个数
+	repeated Job query_result_list = 7;//查询结果
+}
+
+//职位的种类相关信息，保存职位类别(type)的数字-中文映射,以及工作地点(location)的数字-中文映射
+message JobRelatedInfo {
+	repeated int32 type_id = 1;
+	repeated string type_name = 2;
+	repeated int32 location_id = 3;
+	repeated string location_name = 4;
+}
+
+//用户储存在服务器的查询结果的概要
+message JobQueryResultInfo {
+	repeated int32 query_no = 1;
+	repeated string query_id = 2;
+	repeated string query_expression = 3;
+}
+
+
+//进行职位查询时的设置（包含查询表达式，起始索引等）
+message JobQueryOption {
+	int32 query_no = 1;//一个用户最多只允许同时创建3个查询，该字段表示这是第几个查询
+	string query_id = 2;//查询的id，是个唯一值，留空表示是新查询，否则为旧查询，直接调用上次的结果返回
+	string query_expression = 3;//查询表达式
+	JobDataType result_type = 4;//请求的数据类型
+	int32 start_index = 5;//请求的起始索引
+}
+
+//添加任务时的设置（包含查询表达式，起始索引等）
+message AddTaskOption {
+	string query_id = 1;//以该查询结果作为基础，进行增量的查询任务
+	string task_name = 2;
+	string expire_time = 3;//任务的失效时间
+}
+
+message JobQueryResult {
+	int32 query_no = 1;//一个用户最多只允许同时创建3个查询，该字段表示这是第几个查询
+	string query_id = 2;//每个查询随机创建一个字符串作为id
+	repeated Job list = 3;//职位数组
+	int32 start_index = 4;//返回结果的起始索引
+	int32 max_length = 5;//查询结果的个数（所有页码的总和）
+	uint64 version = 6;//进行查询时职位数据的版本(最新更新时间)
+}
+
+message GetTaskQueryResultOption {
+	int32 task_id = 1;
+	int32 start_index = 2;//需要获取的查询结果的起始索引
+	int32 count = 3;//需要获取的个数
+}
+
+
+enum ErrorCode {
+	SUCCESS = 0;
+	INVALID = -1;
+	LOGIN_INCORRECT_PASS = 1001;
+	QUERY_INVALID_EXPRESSION = 2001;//查询表达式有误
+	QUERY_INVALID_ID = 2002;//queryId不存在或无权限
+	JOB_INVALID_ID = 3001;//jobId不存在或无权限
+	TASK_INVALID_ID = 4001;//taskId不存在或无权限
+	TASK_NAME_OVERFLOW = 4002;//任务名称过长
+	TASK_QUERY_INDEX_OVERFLOW = 4003;//索引超界
+	REGISTER_ALREADY_EXISTS = 5001; //用户已存在
+	REGISTER_PASS_TOO_SHORT = 5002; //密码太短
+	SESSION_INVALID_ID = 9001;//非法sessionId或session已失效
+}
+
+message Request {
+	Type type = 1;
+	int64 request_time = 2;
+	string username = 3;
+	string password = 4;
+	string email = 5;
+	string session = 6;
+	int32 id = 7; //get/delete操作可以用到，可以是job_id，也可以是task_id，根据type来确定具体是什么值
+	JobQueryOption job_query_option = 8;
+	AddTaskOption job_query_task_option = 9;
+	GetTaskQueryResultOption get_task_detail_option = 10;
+}
+
+
+
+message Response {
+	Type type = 1;
+	int64 request_time = 2;
+	ErrorCode error_code = 3; //如果成功，error_code返回SUCCESS，否则则返回失败原因ENUM
+	string session = 4;
+	JobRelatedInfo job_related_info = 5;
+	JobQueryResultInfo job_query_result_info = 6;
+	JobQueryResult job_query_result = 7;
+	Job job_detail = 8;
+	repeated Task task_list = 9;
+	int64 task_query_result_changed_time = 10;
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#4a5cfe</color>
+    <!--color name="colorAccent">#FF4081</color-->
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorBlack">#000000</color>
+
+    <!-- 2017 palette -->
+    <color name="lightish_blue">#536dfe</color>
+    <color name="lightish_blue_a11y">#4a5cfe</color>
+    <color name="dark_blue">#4257cb</color>
+    <color name="lighter_blue">#8799ff</color>
+    <color name="aqua_marine">#1ce8b5</color>
+    <color name="aqua_marine_90">#e51ce8b5</color>
+    <color name="neon_blue">#00e4ff</color>
+    <color name="sunflower_yellow">#ffd500</color>
+    <color name="light_periwinkle">#bcc8fb</color>
+    <color name="warm_grey">#9b9b9b</color>
+    <color name="greyish_brown">#424242</color>
+    <color name="links">#4151fd</color>
+    <color name="dark_icon">#b3000000</color>
+
+    <color name="my_grey">#eedddddd</color>
+
+    <color name="light_grey">#ffeeeeee</color>
+    <color name="lighter_grey">#f6f6f6</color>
+    <color name="lightest_grey">#fafafa</color>
+    <color name="reddish">#d32f2f</color>
+    <color name="carnation_pink">#ff80ab</color>
+    <color name="light_salmon">#ffab91</color>
+    <color name="off_white">#e6e6e6</color>
+    <color name="duck_egg_blue">#b2ebf2</color>
+    <color name="light_yellowish_green">#ccff90</color>
+
+    <color name="text_primary_light">@color/greyish_brown</color>
+    <color name="text_primary_light_disabled">#42424242</color>
+
+    <color name="query_main">#536dfe</color>
+    <color name="query_status">#4257cb</color>
+
+    <color name="task_main">#00e4ff</color>
+    <color name="task_status">#00b6cc</color>
+
+    <color name="setting_main">#31e8b9</color>
+    <color name="setting_status">#27ba94</color>
+
+
+</resources>

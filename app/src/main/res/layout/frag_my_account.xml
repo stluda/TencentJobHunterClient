@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="56dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:divider="@drawable/list_divider"
+            android:paddingBottom="32dp"
+            android:showDividers="middle">
+
+            <Button
+                android:id="@+id/btn_favorites_job"
+                style="@style/Settings.LinkButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_account_favorites" />
+
+            <Button
+                android:id="@+id/btn_history_of_job_viewed"
+                style="@style/Settings.LinkButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_account_history" />
+
+            <LinearLayout
+                android:id="@+id/setting_enable_notification_container"
+                style="@style/Settings.SwitchContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/settings_enable_notification_label"
+                    style="@style/Settings.SwitchLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:importantForAccessibility="no"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorBlack"
+                    android:text="@string/my_account_settings_enable_notification" />
+
+                <Switch
+                    android:id="@+id/settings_enable_notification_switch"
+                    style="@style/Settings.Switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:layout_marginStart="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setting_enable_notification_foreground_container"
+                style="@style/Settings.SwitchContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/settings_enable_notification_foreground_label"
+                    style="@style/Settings.SwitchLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:importantForAccessibility="no"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorBlack"
+                    android:text="@string/my_account_settings_enable_notification_foreground" />
+
+                <Switch
+                    android:id="@+id/settings_enable_notification_foreground_switch"
+                    style="@style/Settings.Switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:layout_marginStart="16dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_about"
+                style="@style/Settings.LinkButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_account_about" />
+
+            <Button
+                android:id="@+id/btn_logoff"
+                style="@style/Settings.LinkButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_account_logoff" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/lighter_grey"
+        style="@style/Widget.Tjh.BottomNavigationView"
+        app:menu="@menu/bottom_nav_items" />
+</android.support.design.widget.CoordinatorLayout>

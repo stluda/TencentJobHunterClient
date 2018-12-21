@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/query_nav_item"
+        android:title="@string/menu_query"
+        android:icon="@drawable/ic_query_black_24dp"
+        android:checkable="true" />
+    <item
+        android:id="@+id/task_nav_item"
+        android:title="@string/menu_task"
+        android:icon="@drawable/ic_task_black_24dp"
+        android:checkable="true" />
+    <item
+        android:id="@+id/myacct_nav_item"
+        android:title="@string/menu_my_account"
+        android:icon="@drawable/ic_nav_my_account"
+        android:checkable="true" />
+</menu>

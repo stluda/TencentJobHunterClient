@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="left"
+    android:id="@+id/job_query_result_item">
+    <TextView
+        android:id="@+id/job_query_result_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/job_title_content" />
+
+    <TextView
+        android:id="@+id/job_query_result_item_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="深圳 / 技术类 / 1人 / 2018-01-01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/job_query_result_item_title" />
+
+    <!-- carnation_pink -->
+    <TextView
+        android:id="@+id/job_query_result_item_unread"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="未读"
+        android:layout_marginRight="6dp"
+        android:background="@color/lighter_blue"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/job_query_result_item_info"/>
+
+    <TextView
+        android:id="@+id/job_query_result_item_read"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="已读"
+        android:layout_marginRight="6dp"
+        android:background="@color/my_grey"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/job_query_result_item_info"/>
+
+
+    <ImageButton
+        android:id="@+id/bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="收藏"
+        android:scaleType="center"
+        android:src="@drawable/is_bookmarked"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/job_query_result_item_read" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@drawable/separator"
+        android:layerType="software"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@id/job_query_result_item_read" />
+</android.support.constraint.ConstraintLayout>
