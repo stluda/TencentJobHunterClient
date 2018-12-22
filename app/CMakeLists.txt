@@ -13,13 +13,13 @@ include_directories(src/main/jni)
 add_library(openssl-crypto STATIC IMPORTED)
 set_target_properties(openssl-crypto
 					PROPERTIES IMPORTED_LOCATION
-					${CMAKE_SOURCE_DIR}/libs/cpp/arm64-v8a/libcrypto.a )
+					${CMAKE_SOURCE_DIR}/libs/cpp/${ANDROID_ABI}/libcrypto.a )
 					 #x86 armeabi-v7a  arm64-v8a
 
 add_library(openssl-ssl STATIC IMPORTED)
 set_target_properties(openssl-ssl
 				PROPERTIES IMPORTED_LOCATION
-				${CMAKE_SOURCE_DIR}/libs/cpp/arm64-v8a/libssl.a )
+				${CMAKE_SOURCE_DIR}/libs/cpp/${ANDROID_ABI}/libssl.a )
 				 #x86 armeabi-v7a  arm64-v8a
 
 # Creates and names a library, sets it as either STATIC
