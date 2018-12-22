@@ -1,1 +1,3 @@
+app/libs/* linguist-vendored
+*.h linguist-vendored=false
 *.* linguist-language=Kotlin
