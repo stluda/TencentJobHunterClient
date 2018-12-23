@@ -24,7 +24,7 @@
 
 这样一来，就解决了查询的复杂需求的问题，然后就算现在没有合适的职位，出现符合条件的职位时用户也能在第一时间得知。
 
-该项目为整个系统的客户端部分，提供演示程序[（下载地址）](https://github.com/stluda/TencentJobHunterClient/releases)，服务器已经建好，下载即可直接使用。
+该项目为整个系统的客户端部分，提供演示程序[（下载地址）](https://github.com/stluda/TencentJobHunterClient/releases)，服务器已经建好，下载即可直接使用（登录时的服务端地址请使用默认的tjhserv.com:22343不要改动）。
 
 <br>
 关于项目的设计，详细的说明有专门的文档：https://stluda.github.io/
